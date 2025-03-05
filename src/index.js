@@ -7,7 +7,7 @@ export default class Main {
 	}
 	static resize(e) {
 		const canv = document.getElementById("canvas");
-		const dim = Math.min(window.innerWidth * 0.5625 - 16, window.innerHeight - canv.getBoundingClientRect().top - 8);
+		const dim = Math.min(window.innerWidth * 0.5625 - 8, window.innerHeight - canv.getBoundingClientRect().top - 16);
 		canv.style = `width: ${16 / 9 * dim}px; height: ${dim}px`;
 	}
 }
