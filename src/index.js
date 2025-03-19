@@ -3,8 +3,10 @@ export default class Main {
 	static bg; static fg; static accent;
 	static resize(e) {
 		const canv = document.getElementById("canvas");
-		const r = canv.getBoundingClientRect();
-		const dim = Math.min(window.innerWidth * 0.5625 - r.left, window.innerHeight - r.top) - 16;
+		const dim = Math.min(
+			window.innerWidth * 0.5625 - canv.parentElement.getBoundingClientRect().left,
+			window.innerHeight - canv.getBoundingClientRect().top
+		) - 16;
 		canv.style = `width: ${String(Math.floor(16 / 9 * dim))}px; height: ${String(Math.floor(dim))}px`;
 	}
 	static initColors(dark) {
